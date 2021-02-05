@@ -50,8 +50,8 @@ header {
 
 .loading-spinner {
   position: absolute;
-  height: 100vh;
-  width: 100vw;
+  left: 50%;
+  top: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
