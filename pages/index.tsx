@@ -3,6 +3,7 @@ import { NextPage } from "next"
 import Head from "next/head"
 import AsteroidListItem from "../components/AsteroidListItem"
 import format from "date-fns/format"
+import LoadingSpinner from "../components/LoadingSpinner"
 
 const GET_ASTEROIDS = gql`
   query Asteroids($date: String) {
@@ -30,10 +31,15 @@ const Home: NextPage = () => {
       </header>
       <main>
         {loading ? (
-          <div>Ladataan...</div>
+          <LoadingSpinner />
         ) : (
-          data &&
-          data.asteroids.map((asteroid) => <AsteroidListItem key={asteroid.name} {...asteroid} />)
+          data && (
+            <section className="asteroid-list">
+              {data.asteroids.map((asteroid) => (
+                <AsteroidListItem key={asteroid.name} {...asteroid} />
+              ))}
+            </section>
+          )
         )}
       </main>
       <footer>

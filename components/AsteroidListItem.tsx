@@ -8,7 +8,7 @@ interface AsteroidListItemProps {
 }
 
 const AsteroidListItem: FunctionComponent<AsteroidListItemProps> = ({ name, date, missInKms }) => (
-  <article>
+  <article className="asteroid-list-item">
     <h2>{name}</h2>
     <p>{Math.round(missInKms)} km</p>
     <p>{format(new Date(date), "dd.MM.yyyy HH:mm")}</p>

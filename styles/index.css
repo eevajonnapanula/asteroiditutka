@@ -1,3 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Roboto:wght@400;700&display=swap");
+
+:root {
+  --c-text-color: #d7cdcc;
+  --c-background-color: #1d1e2c;
+  --c-background-color-2: #40474f;
+  --c-primary: #30bced;
+  --c-secondary: #ea7317;
+}
+
+*:focus {
+  outline: 0.15rem solid var(--c-primary);
+}
+
 body {
-  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-family: "Roboto", sans-serif;
+  color: var(--c-text-color);
+  background-color: var(--c-background-color);
+  font-size: 1.5rem;
+}
+
+h1,
+h2 {
+  font-family: "Archivo Black", sans-serif;
+  text-align: center;
+}
+
+a {
+  color: var(--c-primary);
+}
+
+footer,
+header {
+  text-align: center;
+  padding: 1rem;
+}
+
+.asteroid-list {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 1rem;
+}
+
+.asteroid-list-item {
+  background-color: var(--c-background-color-2);
+  width: 17.5rem;
+  padding: 1rem;
+}
+
+.loading-spinner {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: scale(2);
 }
