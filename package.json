@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint './**/*.{ts,tsx}'"
+    "lint": "eslint './**/*.{ts,tsx}'",
+    "export": "next export"
   },
   "dependencies": {
     "@apollo/client": "^3.3.6",
