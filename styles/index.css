@@ -35,6 +35,13 @@ header {
   padding: 1rem;
 }
 
+#__next {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+
 .asteroid-list {
   display: grid;
   justify-items: center;
