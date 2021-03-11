@@ -35,6 +35,30 @@ header {
   padding: 1rem;
 }
 
+form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+form > input {
+  margin: 1rem;
+  color: var(--c-text-color);
+  background-color: var(--c-background-color);
+  padding: 0.75rem;
+  border: 0.25rem solid var(--c-text-color);
+}
+
+form > button {
+  font-family: "Roboto", sans-serif;
+  color: var(--c-text-color);
+  background-color: var(--c-background-color);
+  font-size: 1.5rem;
+  padding: 0.5rem 2rem;
+  border: 0.25rem solid var(--c-text-color);
+}
+
 #__next {
   display: flex;
   flex-direction: column;
@@ -64,4 +88,10 @@ header {
   justify-content: center;
   align-items: center;
   transform: scale(2);
+}
+
+@media screen and (max-width: 540px) {
+  form {
+    flex-direction: column;
+  }
 }

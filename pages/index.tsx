@@ -4,6 +4,8 @@ import Head from "next/head"
 import AsteroidListItem from "../components/AsteroidListItem"
 import format from "date-fns/format"
 import LoadingSpinner from "../components/LoadingSpinner"
+import DateForm from "../components/DateForm"
+import { useState } from "react"
 
 const GET_ASTEROIDS = gql`
   query Asteroids($date: String) {
@@ -17,9 +19,15 @@ const GET_ASTEROIDS = gql`
 `
 
 const Home: NextPage = () => {
+  const [date, setDate] = useState(format(new Date(), "yyyy-MM-dd"))
+
   const { data, loading } = useQuery(GET_ASTEROIDS, {
-    variables: { date: format(new Date(), "yyyy-MM-dd") },
+    variables: { date },
   })
+
+  const handleDateChange = (changedDate: string) => {
+    setDate(changedDate)
+  }
 
   return (
     <>
@@ -28,6 +36,7 @@ const Home: NextPage = () => {
       </Head>
       <header>
         <h1>Asteroiditutka</h1>
+        <DateForm date={date} handleDateChange={handleDateChange} />
       </header>
       <main>
         {loading ? (
